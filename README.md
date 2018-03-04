@@ -1,5 +1,6 @@
 # polymer 3 experiment
 playing with the next generation polymer to see what's in its belly
+polymer blog [reference](https://www.polymer-project.org/blog/2017-08-23-hands-on-30-preview)
 
 # pre install
 1. install polymer-cli globally
