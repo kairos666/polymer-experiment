@@ -2,7 +2,86 @@
 # yarn lockfile v1
 
 
-"@polymer/polymer@^3.0.0-pre.10":
+"@polymer/font-roboto@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/font-roboto/-/font-roboto-0.0.3.tgz#9d58edb660bbed2d4bd29d3bf9b21c20bddd6187"
+
+"@polymer/iron-a11y-keys-behavior@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-a11y-keys-behavior/-/iron-a11y-keys-behavior-0.0.3.tgz#82a9c535d01ae94cb33d9c071a9a543ebc2044c0"
+  dependencies:
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-autogrow-textarea@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-autogrow-textarea/-/iron-autogrow-textarea-0.0.3.tgz#f1ea1444309f31634fe45ccfcfe376b83ecfd28a"
+  dependencies:
+    "@polymer/iron-behaviors" "^0.0.3"
+    "@polymer/iron-flex-layout" "^0.0.3"
+    "@polymer/iron-form-element-behavior" "^0.0.3"
+    "@polymer/iron-validatable-behavior" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-behaviors@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-behaviors/-/iron-behaviors-0.0.3.tgz#027484885ddb924f99fa8083dfba810e39d2671b"
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-flex-layout@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-flex-layout/-/iron-flex-layout-0.0.3.tgz#b7d7a732b1cbadfe6aa9500ca06f40d02578baf7"
+  dependencies:
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-form-element-behavior@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-form-element-behavior/-/iron-form-element-behavior-0.0.3.tgz#3564a2a51d8ccfdda4193d943d5fd0c12c463759"
+  dependencies:
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-input@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-input/-/iron-input-0.0.3.tgz#e41c8587b251aa510a26f28ca92381ab1457df79"
+  dependencies:
+    "@polymer/iron-validatable-behavior" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-meta@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-meta/-/iron-meta-0.0.3.tgz#a4cec8479bdaec66ff03749a59136f21fde01d70"
+  dependencies:
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/iron-validatable-behavior@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/iron-validatable-behavior/-/iron-validatable-behavior-0.0.3.tgz#438747173d2b1d3bc1a08458a55ed31c9b4f192f"
+  dependencies:
+    "@polymer/iron-meta" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/paper-input@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-input/-/paper-input-0.0.3.tgz#5bb3efa9063dce78586839c4aeb2eb6cf2c618a2"
+  dependencies:
+    "@polymer/iron-a11y-keys-behavior" "^0.0.3"
+    "@polymer/iron-autogrow-textarea" "^0.0.3"
+    "@polymer/iron-behaviors" "^0.0.3"
+    "@polymer/iron-form-element-behavior" "^0.0.3"
+    "@polymer/iron-input" "^0.0.3"
+    "@polymer/paper-styles" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/paper-styles@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@polymer/paper-styles/-/paper-styles-0.0.3.tgz#b8466a047807d6fc63c24fa71b486c975cc75379"
+  dependencies:
+    "@polymer/font-roboto" "^0.0.3"
+    "@polymer/iron-flex-layout" "^0.0.3"
+    "@polymer/polymer" "^1.2.5-npm-test.2"
+
+"@polymer/polymer@^1.2.5-npm-test.2", "@polymer/polymer@^3.0.0-pre.10":
   version "3.0.0-pre.10"
   resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.10.tgz#ffecc8cfac05546467b8913c73b7a9caf2a990c2"
   dependencies:
@@ -20,3 +99,7 @@
 requirejs@^2.3.5:
   version "2.3.5"
   resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.5.tgz#617b9acbbcb336540ef4914d790323a8d4b861b0"
+
+webcomponents.js@^0.7.20:
+  version "0.7.24"
+  resolved "https://registry.yarnpkg.com/webcomponents.js/-/webcomponents.js-0.7.24.tgz#2116fbfa1468ec416a7befdaa333e1d118f69c04"

@@ -10,8 +10,12 @@
     "tests": "polymer test --npm"
   },
   "dependencies": {
+    "@polymer/paper-input": "^0.0.3",
     "@polymer/polymer": "^3.0.0-pre.10",
     "@webcomponents/webcomponentsjs": "^1.1.0",
     "requirejs": "^2.3.5"
+  },
+  "resolutions": {
+    "@polymer/polymer": "3.0.0-pre.10"
   }
 }
