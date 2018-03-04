@@ -1,0 +1,17 @@
+{
+  "name": "polymer-experiment",
+  "flat": true,
+  "version": "0.1.0",
+  "description": "experiment with polymer 3",
+  "author": "David Maggi",
+  "license": "MIT",
+  "scripts": {
+    "start": "polymer serve --npm --open",
+    "tests": "polymer test --npm"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.10",
+    "@webcomponents/webcomponentsjs": "^1.1.0",
+    "requirejs": "^2.3.5"
+  }
+}
