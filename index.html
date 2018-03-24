@@ -8,6 +8,33 @@
     <script type="module" src="src/app.js"></script>
     <script type="module" src="src/components/waf-buttons.js"></script>
     <script type="module" src="src/components/waf-textfield.js"></script>
+    <style>
+      /**
+      *  theme variables 
+      **/
+      @supports (--test-variable: red) {
+        :root {
+          /* ==========  direct theme overrides - with fallback  ========== */
+          --performance_font: 'Helvetica', 'Arial', sans-serif;
+          --color-black: 0,0,0;
+          --color-primary: 63,81,181;
+          --color-error-color: 211,47,47;
+          --animation-curve-default: cubic-bezier(0.4, 0, 0.2, 1);
+          --input-text-font-size: 16px;
+          --input-text-width: 100%;
+          --input-text-padding: 4px;
+          --input-text-vertical-spacing: 20px;
+          --input-text-floating-label-fontsize: 12px;
+          /* ==========  computed from above  ========== */
+          --input-text-label-color: rgba(var(--color-black), 0.26);
+          --input-text-bottom-border-color: rgba(var(--color-black), 0.12);
+          --input-text-highlight-color: rgb(var(--color-primary));
+          --input-text-disabled-color: var(--input-text-bottom-border-color);
+          --input-text-disabled-text-color: var(--input-text-label-color);
+          --input-text-error-color: rgb(var(--color-error-color));
+        }
+      }
+  </style>
   </head>
   <body>
     <my-app></my-app>
@@ -16,7 +43,7 @@
       <input id="sample1" name="age" type="number" min="0" step="1" />
     </waf-textfield>
     <waf-textfield label="label A" float>
-      <input id="sample2" name="age" type="number" min="0" step="1" />
+      <input id="sample2" name="age" type="text" pattern="-?[0-9]*(\.[0-9]+)?" />
     </waf-textfield>
     <waf-textfield label="label B" align-right>
       <input id="sample3" name="age" type="number" min="0" step="1" />
@@ -40,5 +67,9 @@
       <input name="age" type="number" min="0" step="1" value="36" />
     </waf-textfield>
     <waf-textfield label="no input"></waf-textfield>
+    <waf-textfield label="no id input" float>
+      <input name="age" type="number" min="0" step="1" value="36" />
+      <input name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
   </body>
 </html>
