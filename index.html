@@ -12,6 +12,33 @@
   <body>
     <my-app></my-app>
     <waf-button></waf-button>
-    <waf-textfield></waf-textfield>
+    <waf-textfield label="label Z">
+      <input id="sample1" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label A" float>
+      <input id="sample2" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label B" align-right>
+      <input id="sample3" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label C" full-width>
+      <input id="sample4" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label D" float align-right full-width>
+      <input id="sample5" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label E" float>
+      <input id="sample6" name="age" type="number" min="0" step="1" disabled />
+    </waf-textfield>
+    <waf-textfield label="label F" float>
+      <input id="sample7" name="age" type="number" min="0" step="1" placeholder="36" />
+    </waf-textfield>
+    <waf-textfield label="label G" float>
+      <input id="sample8" name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
+    <waf-textfield label="no id input" float>
+      <input name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
+    <waf-textfield label="no input"></waf-textfield>
   </body>
 </html>
