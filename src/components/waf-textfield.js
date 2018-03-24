@@ -54,12 +54,10 @@ export class WafTextfield extends PolymerElement {
         // keep reference in internal state
         this._inputId = (this._inputNode.id !== '') ? this._inputNode.id : 'missing ID';
         this._hasPlaceholder = (this._inputNode.placeholder !== '');
-        this._isDirty = (this._inputNode.value !== '');
         this._isDisabled = this._inputNode.disabled;
 
         // apply change in container classes
         let shadowTargetClassList = this.shadowRoot.firstElementChild.classList;
-        shadowTargetClassList.toggle('is-dirty', this._isDirty);
         shadowTargetClassList.toggle('has-placeholder', this._hasPlaceholder);
         shadowTargetClassList.toggle('is-disabled', this._isDisabled);
     }
@@ -85,9 +83,21 @@ export class WafTextfield extends PolymerElement {
             
             // update component according slot changes
             if (this._inputNode) {
+                const shadowContainerClassList = this.shadowRoot.firstElementChild.classList;
+                
+                // initial dirty status then rely on change event
+                this._isDirty = (this._inputNode.value !== '');
+                shadowContainerClassList.toggle('is-dirty', this._isDirty);
+
+                // bind behaviors handlers
                 this._inputMutationObserver.observe(this._inputNode, { attributes: true });
 
-                // initial status
+                this._inputNode.addEventListener('focus', () => { shadowContainerClassList.add('is-focused') });
+                this._inputNode.addEventListener('blur', () => { shadowContainerClassList.remove('is-focused') });
+                this._inputNode.addEventListener('change', () => { shadowContainerClassList.toggle('is-dirty', (this._inputNode.value !== '')) });
+                this._inputNode.addEventListener('keyup', () => { shadowContainerClassList.toggle('is-dirty', (this._inputNode.value !== '')) });
+
+                // initial status - placeholder, id, disabled
                 this._inputMutationHandler();
             } else {
                 // check for input after slot mutation
