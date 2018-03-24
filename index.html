@@ -42,8 +42,18 @@
     <waf-textfield label="label Z">
       <input id="sample1" name="age" type="number" min="0" step="1" />
     </waf-textfield>
-    <waf-textfield label="label A" float>
-      <input id="sample2" name="age" type="text" pattern="-?[0-9]*(\.[0-9]+)?" />
+    <waf-textfield label="label A" float errors='{ 
+      "badInput": "donnée incorrecte",
+      "patternMismatch": "donnée enfreignant les règles",
+      "rangeOverflow": "supérieur au maximum autorisé",
+      "rangeUnderflow": "inférieur au minimum autorisé",
+      "stepMismatch": "valeur non autorisée",
+      "tooLong": "trop de charactères",
+      "tooShort": "trop peu de charactères",
+      "typeMismatch": "format incorrect",
+      "valueMissing": "champs requis"
+    }'>
+      <input id="sample2" name="age" type="text" pattern="-?[0-9]*(\.[0-9]+)?" required />
     </waf-textfield>
     <waf-textfield label="label B" align-right>
       <input id="sample3" name="age" type="number" min="0" step="1" />

@@ -12,7 +12,7 @@ export class WafTextfield extends PolymerElement {
             :host {
                 display: inline-block;
             }
-            
+
             /**
             *  component skin
             **/
@@ -228,6 +228,18 @@ export class WafTextfield extends PolymerElement {
     _inputValidationProcessing() {
         // check validity
         this._isInvalid = !this._inputNode.checkValidity();
+
+        // update error message
+        if (this._isInvalid) {
+            const validityStates = this._inputNode.validity;
+            let errorMsgs = []
+
+            Object.keys(this.errors).forEach(errorType => {
+                if (validityStates[errorType]) errorMsgs.push(this.errors[errorType]);
+            });
+
+            this._errorText = (errorMsgs.length === 0) ? '' : errorMsgs.join(', ');
+        }
 
         // apply classes
         if ((this._isDirty && this._isInvalid) || this._inputNode.validity.valueMissing) {
