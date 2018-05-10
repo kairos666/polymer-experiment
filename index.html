@@ -6,8 +6,80 @@
 
     <!-- Import the my-app element's module. -->
     <script type="module" src="src/app.js"></script>
+    <script type="module" src="src/components/waf-buttons.js"></script>
+    <script type="module" src="src/components/waf-textfield.js"></script>
+    <style>
+      /**
+      *  theme variables 
+      **/
+      @supports (--test-variable: red) {
+        :root {
+          /* ==========  direct theme overrides - with fallback  ========== */
+          --performance_font: 'Helvetica', 'Arial', sans-serif;
+          --color-black: 0,0,0;
+          --color-primary: 63,81,181;
+          --color-error-color: 211,47,47;
+          --animation-curve-default: cubic-bezier(0.4, 0, 0.2, 1);
+          --input-text-font-size: 16px;
+          --input-text-width: 100%;
+          --input-text-padding: 4px;
+          --input-text-vertical-spacing: 20px;
+          --input-text-floating-label-fontsize: 12px;
+          /* ==========  computed from above  ========== */
+          --input-text-label-color: rgba(var(--color-black), 0.26);
+          --input-text-bottom-border-color: rgba(var(--color-black), 0.12);
+          --input-text-highlight-color: rgb(var(--color-primary));
+          --input-text-disabled-color: var(--input-text-bottom-border-color);
+          --input-text-disabled-text-color: var(--input-text-label-color);
+          --input-text-error-color: rgb(var(--color-error-color));
+        }
+      }
+  </style>
   </head>
   <body>
     <my-app></my-app>
+    <waf-button></waf-button>
+    <waf-textfield label="label Z">
+      <input id="sample1" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label A" float errors='{ 
+      "badInput": "donnée incorrecte",
+      "patternMismatch": "donnée enfreignant les règles",
+      "rangeOverflow": "supérieur au maximum autorisé",
+      "rangeUnderflow": "inférieur au minimum autorisé",
+      "stepMismatch": "valeur non autorisée",
+      "tooLong": "trop de charactères",
+      "tooShort": "trop peu de charactères",
+      "typeMismatch": "format incorrect",
+      "valueMissing": "champs requis"
+    }'>
+      <input id="sample2" name="age" type="text" pattern="-?[0-9]*(\.[0-9]+)?" required />
+    </waf-textfield>
+    <waf-textfield label="label B" align-right>
+      <input id="sample3" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label C" full-width>
+      <input id="sample4" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label D" float align-right full-width>
+      <input id="sample5" name="age" type="number" min="0" step="1" />
+    </waf-textfield>
+    <waf-textfield label="label E" float>
+      <input id="sample6" name="age" type="number" min="0" step="1" disabled />
+    </waf-textfield>
+    <waf-textfield label="label F" float>
+      <input id="sample7" name="age" type="number" min="0" step="1" placeholder="36" />
+    </waf-textfield>
+    <waf-textfield label="label G" float>
+      <input id="sample8" name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
+    <waf-textfield label="no id input" float>
+      <input name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
+    <waf-textfield label="no input"></waf-textfield>
+    <waf-textfield label="no id input" float>
+      <input name="age" type="number" min="0" step="1" value="36" />
+      <input name="age" type="number" min="0" step="1" value="36" />
+    </waf-textfield>
   </body>
 </html>
